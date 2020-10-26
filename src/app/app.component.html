@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="header text-center pt-2">
+    <h2 class="mb-0">Welcome to the Code Challenge</h2>
+  </div>
+  <hr>
+  <div class="enrollees-list-section row pt-2" *ngIf="enrolleesList?.length > 0">
+    <div class="card col-12 col-sm-6 col-lg-4 border-0 mb-3" *ngFor="let enrollee of enrolleesList; let i = index">
+      <div class="card-body border">
+        <a href="javascript:void(0)" class="edit-icon-link" (click)="getEnrolleeToEdit(enrollee.id)"
+          *ngIf="!enrollee.isEdit">
+          <img src="../assets/images/icon-edit.png" height="18px" width="18px" alt="edit-icon" title="edit" />
+        </a>
+        <div class="save-cancel" *ngIf="enrollee.isEdit">
+          <a href="javascript:void(0)" class="save-link mr-2" (click)="saveEdittedValue(enrollee)">
+            <img src="../assets/images/save-image.png" height="20px" width="20px" alt="save-icon"
+              title="save changes" />
+          </a>
+          <a href="javascript:void(0)" class="cancel-link" (click)="cancelEdit(enrollee.id)">
+            <img src="../assets/images/cancel_image.png" height="20px" width="20px" alt="cancel-icon"
+              title="cancel edit" />
+          </a>
+        </div>
+        <div>
+          <h5 class="card-title border-bottom pb-2" *ngIf="!enrollee.isEdit">{{enrollee.name}}</h5>
+          <div class="border-bottom pb-2 mb-2" *ngIf="enrollee.isEdit">
+            <span class="mr-2 font-weight-bold">Name:</span>
+            <input type="text" [(ngModel)]="enrolleeName" required/>
+          </div>
+          <p>
+            <span class="font-weight-bold">Enrollee Id: </span>
+            {{enrollee.id}}</p>
+          <p><span class="font-weight-bold">Activation Status: </span>
+            <span *ngIf="!enrollee.isEdit">
+              <img src="../assets/images/active-image.png" alt="active-image" *ngIf="enrollee.active" height="20px" />
+              <img src="../assets/images/not-active.png" alt="not-active-image" *ngIf="!enrollee.active"
+                height="20px" />
+            </span>
+            <label class="switch mb-0" *ngIf="enrollee.isEdit">
+              <input type="checkbox" [checked]="enrollee.active" (change)="checkCheckBoxvalue($event)">
+              <span class="slider round"></span>
+            </label>
+          </p>
+          <p class="mb-0"><span class="font-weight-bold">DOB:</span> {{enrollee.dateOfBirth}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
