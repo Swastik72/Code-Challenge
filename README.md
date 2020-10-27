@@ -1,4 +1,16 @@
-1.Please install the node modules
+Steps to run this project. As i have used Bootstrap to make this responsive will also suggest strictly to install bootstrap. Please find the below steps to get the best user feeling of this project
+
+1.First clone the project using the below url or you can also download the zip file from the given URL.
+https://github.com/Swastik72/Code-Challenge.git
+
+2. Install node modules using command "npm install".
+3. Install bootstrap using the following command.
+npm install bootstrap --save
+
+4. After installing bootstrap please check if bootstrap folder is present inside node_modules folder or not. 
+5. Without installing bootstrap the functionalities might be working perfectly but the look and feel wont be there.
+
+
 
 # CodeChallenge
 
