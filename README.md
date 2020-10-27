@@ -3,7 +3,7 @@ Steps to run this project. As i have used Bootstrap to make this responsive will
 1.First clone the project using the below url or you can also download the zip file from the given URL.
 https://github.com/Swastik72/Code-Challenge.git
 
-2. Install node modules using command "npm install".
+2. Install node modules using command "npm install" after removing the package-lock.json file.
 3. Install bootstrap using the following command.
 npm install bootstrap --save
 
